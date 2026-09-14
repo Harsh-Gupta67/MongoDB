@@ -1,0 +1,254 @@
+Use Poornima
+db.Student.insertMany([
+  {
+    studentId: 101,
+    name: "Harsh Gupta",
+    department: "Computer Science",
+    graduationYear: 2028,
+    cgpa: 8.7,
+    address: {
+      city: "Shamli",
+      state: "Uttar Pradesh",
+      pincode: 247776
+    },
+    skills: ["Java", "Selenium", "API Testing", "MongoDB"]
+  },
+
+  {
+    studentId: 102,
+    name: "Gaurav Malviya",
+    department: "Advanced computing",
+    graduationYear: 2028,
+    cgpa: 8.2,
+    address: {
+      city: "Udaipur",
+      state: "Rajasthan",
+      pincode: 302017
+    },
+    skills: ["Python", "SQL", "MongoDB"]
+  },
+
+  {
+    studentId: 103,
+    name: "Mohit Saini",
+    department: "Computer Science",
+    graduationYear: 2028,
+    cgpa: 7.9,
+    address: {
+      city: "Jaipur",
+      state: "Rajasthan",
+      pincode: 324001
+    },
+    skills: ["Java", "HTML", "CSS"]
+  },
+
+  {
+    studentId: 104,
+    name: "Naman Singh Shekhawat",
+    department: "Advanced computing",
+    graduationYear: 2028,
+    cgpa: 8.4,
+    address: {
+      city: "Sikar",
+      state: "Rajasthan",
+      pincode: 332001
+    },
+    skills: ["C", "C++", "Arduino"]
+  },
+
+  {
+    studentId: 105,
+    name: "Ritik Kumar",
+    department: "Information Technology",
+    graduationYear: 2028,
+    cgpa: 8.1,
+    address: {
+      city: "Delhi",
+      state: "Delhi",
+      pincode: 110001
+    },
+    skills: ["JavaScript", "React", "Node.js"]
+  },
+
+  {
+    studentId: 106,
+    name: "Kartikey Kumawat",
+    department: "Computer Science",
+    graduationYear: 2028,
+    cgpa: 9.0,
+    address: {
+      city: "Jaipur",
+      state: "Rajasthan",
+      pincode: 302012
+    },
+    skills: ["Java", "DSA", "MongoDB"]
+  },
+
+  {
+    studentId: 107,
+    name: "Pranjal",
+    department: "Mechanical",
+    graduationYear: 2028,
+    cgpa: 7.6,
+    address: {
+      city: "Ajmer",
+      state: "Rajasthan",
+      pincode: 305001
+    },
+    skills: ["AutoCAD", "C++", "MATLAB"]
+  },
+
+  {
+    studentId: 108,
+    name: "Aditya Singhal",
+    department: "Computer Science",
+    graduationYear: 2028,
+    cgpa: 8.8,
+    address: {
+      city: "Jaipur",
+      state: "Rajasthan",
+      pincode: 302021
+    },
+    skills: ["Python", "Django", "SQL"]
+  },
+
+  {
+    studentId: 109,
+    name: "Aditya Sharma",
+    department: "Information Technology",
+    graduationYear: 2028,
+    cgpa: 8.3,
+    address: {
+      city: "Alwar",
+      state: "Rajasthan",
+      pincode: 301001
+    },
+    skills: ["Java", "Spring Boot", "MySQL"]
+  },
+
+  {
+    studentId: 110,
+    name: "Tapan",
+    department: "Civil",
+    graduationYear: 2028,
+    cgpa: 7.8,
+    address: {
+      city: "Bharatpur",
+      state: "Rajasthan",
+      pincode: 321001
+    },
+    skills: ["AutoCAD", "Revit", "STAAD Pro"]
+  },
+
+  {
+    studentId: 111,
+    name: "Neha",
+    department: "Computer Science",
+    graduationYear: 2028,
+    cgpa: 9.1,
+    address: {
+      city: "Jaipur",
+      state: "Rajasthan",
+      pincode: 302004
+    },
+    skills: ["Python", "Machine Learning", "SQL"]
+  },
+
+  {
+    studentId: 112,
+    name: "Avika",
+    department: "Information Technology",
+    graduationYear: 2028,
+    cgpa: 8.6,
+    address: {
+      city: "Jodhpur",
+      state: "Rajasthan",
+      pincode: 342001
+    },
+    skills: ["HTML", "CSS", "JavaScript"]
+  },
+
+  {
+    studentId: 113,
+    name: "Titiksha",
+    department: "Computer Science",
+    graduationYear: 2028,
+    cgpa: 8.9,
+    address: {
+      city: "Jaipur",
+      state: "Rajasthan",
+      pincode: 302015
+    },
+    skills: ["Java", "Selenium", "SQL"]
+  },
+
+  {
+    studentId: 114,
+    name: "Anugya",
+    department: "Electronics",
+    graduationYear: 2028,
+    cgpa: 8.0,
+    address: {
+      city: "Udaipur",
+      state: "Rajasthan",
+      pincode: 313001
+    },
+    skills: ["C", "Embedded Systems", "Arduino"]
+  },
+
+  {
+    studentId: 115,
+    name: "Deepali",
+    department: "Information Technology",
+    graduationYear: 2028,
+    cgpa: 8.5,
+    address: {
+      city: "Jaipur",
+      state: "Rajasthan",
+      pincode: 302006
+    },
+    skills: ["Python", "Flask", "MongoDB"]
+  },
+
+  {
+    studentId: 116,
+    name: "Ekta",
+    department: "Computer Science",
+    graduationYear: 2028,
+    cgpa: 8.2,
+    address: {
+      city: "Kota",
+      state: "Rajasthan",
+      pincode: 324005
+    },
+    skills: ["C++", "DSA", "Git"]
+  },
+
+  {
+    studentId: 117,
+    name: "Ayushi",
+    department: "Information Technology",
+    graduationYear: 2028,
+    cgpa: 9.0,
+    address: {
+      city: "Jaipur",
+      state: "Rajasthan",
+      pincode: 302018
+    },
+    skills: ["Java", "SQL", "API Testing"]
+  },
+
+  {
+    studentId: 118,
+    name: "Astha",
+    department: "Computer Science",
+    graduationYear: 2028,
+    cgpa: 8.7,
+    address: {
+      city: "Sikar",
+      state: "Rajasthan",
+      pincode: 332002
+    },
+    skills: ["Python", "MongoDB", "Data Analytics"]
+  }
+])
