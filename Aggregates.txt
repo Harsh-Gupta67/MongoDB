@@ -1,0 +1,316 @@
+Collection :
+use CollegeCourseDB
+
+db.students.insertMany([
+  {
+    studentId: "S001",
+    name: "Harsh Gupta",
+    department: "Cyber Security",
+    year: 3,
+    semester: 5,
+    cgpa: 8.4,
+    age: 19,
+    courses: ["MongoDB", "Cyber Security", "DBMS"],
+    fees: 85000
+  },
+  {
+    studentId: "S002",
+    name: "Gaurav Malviya",
+    department: "Computer Science",
+    year: 3,
+    semester: 5,
+    cgpa: 7.8,
+    age: 20,
+    courses: ["Java", "DBMS", "Operating System"],
+    fees: 82000
+  },
+  {
+    studentId: "S003",
+    name: "Rahul Sharma",
+    department: "Information Technology",
+    year: 2,
+    semester: 4,
+    cgpa: 8.7,
+    age: 19,
+    courses: ["Python", "MongoDB", "Web Development"],
+    fees: 78000
+  },
+  {
+    studentId: "S004",
+    name: "Ankit Kumar",
+    department: "Cyber Security",
+    year: 4,
+    semester: 7,
+    cgpa: 9.1,
+    age: 21,
+    courses: ["Network Security", "Cryptography", "Ethical Hacking"],
+    fees: 88000
+  },
+  {
+    studentId: "S005",
+    name: "Priya Singh",
+    department: "Computer Science",
+    year: 2,
+    semester: 4,
+    cgpa: 8.9,
+    age: 19,
+    courses: ["Java", "MongoDB", "DBMS"],
+    fees: 82000
+  },
+  {
+    studentId: "S006",
+    name: "Aman Verma",
+    department: "Electronics",
+    year: 3,
+    semester: 5,
+    cgpa: 7.5,
+    age: 20,
+    courses: ["Digital Electronics", "Microprocessor"],
+    fees: 76000
+  },
+  {
+    studentId: "S007",
+    name: "Neha Gupta",
+    department: "Information Technology",
+    year: 4,
+    semester: 7,
+    cgpa: 9.3,
+    age: 21,
+    courses: ["Cloud Computing", "MongoDB", "Python"],
+    fees: 80000
+  },
+  {
+    studentId: "S008",
+    name: "Rohit Meena",
+    department: "Mechanical",
+    year: 3,
+    semester: 5,
+    cgpa: 7.2,
+    age: 20,
+    courses: ["Thermodynamics", "Machine Design"],
+    fees: 75000
+  },
+  {
+    studentId: "S009",
+    name: "Simran Kaur",
+    department: "Computer Science",
+    year: 4,
+    semester: 7,
+    cgpa: 8.6,
+    age: 21,
+    courses: ["DBMS", "Artificial Intelligence", "Java"],
+    fees: 84000
+  },
+  {
+    studentId: "S010",
+    name: "Vikas Yadav",
+    department: "Cyber Security",
+    year: 2,
+    semester: 4,
+    cgpa: 7.9,
+    age: 19,
+    courses: ["Cyber Security", "Python", "Networking"],
+    fees: 85000
+  },
+  {
+    studentId: "S011",
+    name: "Karan Joshi",
+    department: "Information Technology",
+    year: 3,
+    semester: 5,
+    cgpa: 8.1,
+    age: 20,
+    courses: ["Web Development", "MongoDB", "JavaScript"],
+    fees: 79000
+  },
+  {
+    studentId: "S012",
+    name: "Pooja Sharma",
+    department: "Electronics",
+    year: 2,
+    semester: 4,
+    cgpa: 8.3,
+    age: 19,
+    courses: ["Digital Electronics", "Embedded Systems"],
+    fees: 77000
+  },
+  {
+    studentId: "S013",
+    name: "Mohit Agarwal",
+    department: "Computer Science",
+    year: 3,
+    semester: 5,
+    cgpa: 9.0,
+    age: 20,
+    courses: ["MongoDB", "DBMS", "Data Structures"],
+    fees: 83000
+  },
+  {
+    studentId: "S014",
+    name: "Riya Jain",
+    department: "Cyber Security",
+    year: 4,
+    semester: 7,
+    cgpa: 8.8,
+    age: 21,
+    courses: ["Cryptography", "Ethical Hacking", "Network Security"],
+    fees: 88000
+  },
+  {
+    studentId: "S015",
+    name: "Arjun Singh",
+    department: "Mechanical",
+    year: 2,
+    semester: 4,
+    cgpa: 7.6,
+    age: 19,
+    courses: ["Machine Design", "Thermodynamics"],
+    fees: 75000
+  }
+])
+
+Aggergations:
+
+1.db.students.aggregate([
+  {
+    $group: {
+      _id: null,
+      totalFees: { $sum: "$fees" }
+    }
+  }
+])
+
+2.db.students.aggregate([
+  {
+    $group: {
+      _id: null,
+      averageCGPA: { $avg: "$cgpa" }
+    }
+  }
+])
+
+3.db.students.aggregate([
+  {
+    $group: {
+      _id: null,
+      lowestCGPA: { $min: "$cgpa" }
+    }
+  }
+])
+
+4.db.students.aggregate([
+  {
+    $group: {
+      _id: null,
+      highestCGPA: { $max: "$cgpa" }
+    }
+  }
+])
+
+5.db.students.aggregate([
+  {
+    $count: "totalStudents"
+  }
+])
+
+6.db.students.aggregate([
+  {
+    $group: {
+      _id: "$department",
+      totalStudents: { $sum: 1 }
+    }
+  }
+])
+
+7.db.students.aggregate([
+  {
+    $group: {
+      _id: "$department",
+      averageCGPA: { $avg: "$cgpa" }
+    }
+  }
+])
+
+8.db.students.aggregate([
+  {
+    $sort: {
+      cgpa: -1
+    }
+  }
+])
+
+9.db.students.aggregate([
+  {
+    $sort: {
+      cgpa: -1
+    }
+  },
+  {
+    $limit: 5
+  }
+])
+
+10.db.students.aggregate([
+  {
+    $match: {
+      department: "Cyber Security"
+    }
+  },
+  {
+    $group: {
+      _id: "$department",
+      averageCGPA: { $avg: "$cgpa" }
+    }
+  }
+])
+
+11.db.students.aggregate([
+  {
+    $unwind: "$courses"
+  },
+  {
+    $group: {
+      _id: "$courses",
+      students: { $sum: 1 }
+    }
+  },
+  {
+    $sort: {
+      students: -1
+    }
+  }
+])
+
+12.db.students.aggregate([
+  {
+    $project: {
+      _id: 0,
+      name: 1,
+      cgpa: 1
+    }
+  }
+])
+
+13.db.students.aggregate([
+  {
+    $match: {
+      department: "Cyber Security"
+    }
+  },
+  {
+    $sort: {
+      cgpa: -1
+    }
+  },
+  {
+    $limit: 3
+  },
+  {
+    $project: {
+      _id: 0,
+      name: 1,
+      cgpa: 1,
+      department: 1
+    }
+  }
+])
