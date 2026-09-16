@@ -1,0 +1,323 @@
+db.students.insertMany([
+    {
+        rollNo: 101,
+        name: "Vasanth",
+        age: 21,
+        department: "CSE",
+        marks: 85,
+        skills: ["Java", "Python", "MongoDB"],
+        address: {
+            city: "Chennai",
+            state: "Tamil Nadu"
+        },
+        scholarship: true
+    },
+
+    {
+        rollNo: 102,
+        name: "Rahul",
+        age: 22,
+        department: "ECE",
+        marks: 72,
+        skills: ["C", "Python", "Arduino"],
+        address: {
+            city: "Bangalore",
+            state: "Karnataka"
+        },
+        scholarship: false
+    },
+
+    {
+        rollNo: 103,
+        name: "Priya",
+        age: 20,
+        department: "CSE",
+        marks: 91,
+        skills: ["Java", "Python", "AI"],
+        address: {
+            city: "Chennai",
+            state: "Tamil Nadu"
+        },
+        scholarship: true
+    },
+
+    {
+        rollNo: 104,
+        name: "Arjun",
+        age: 23,
+        department: "MECH",
+        marks: 68,
+        skills: ["AutoCAD", "C", "Java"],
+        address: {
+            city: "Hyderabad",
+            state: "Telangana"
+        }
+    },
+
+    {
+        rollNo: 105,
+        name: "Sneha",
+        age: 21,
+        department: "IT",
+        marks: 88,
+        skills: ["Python", "MongoDB", "HTML"],
+        address: {
+            city: "Chennai",
+            state: "Tamil Nadu"
+        },
+        scholarship: true
+    },
+
+    {
+        rollNo: 106,
+        name: "Kiran",
+        age: 24,
+        department: "EEE",
+        marks: 65,
+        skills: ["C", "Arduino", "MATLAB"],
+        address: {
+            city: "Pune",
+            state: "Maharashtra"
+        },
+        scholarship: false
+    },
+
+    {
+        rollNo: 107,
+        name: "Anjali",
+        age: 20,
+        department: "CSE",
+        marks: 95,
+        skills: ["Java", "Python", "AI", "MongoDB"],
+        address: {
+            city: "Bangalore",
+            state: "Karnataka"
+        },
+        scholarship: true
+    },
+
+    {
+        rollNo: 108,
+        name: "Rohit",
+        age: 22,
+        department: "IT",
+        marks: 76,
+        skills: ["JavaScript", "HTML", "CSS"],
+        address: {
+            city: "Hyderabad",
+            state: "Telangana"
+        },
+        scholarship: false
+    },
+
+    {
+        rollNo: 109,
+        name: "Divya",
+        age: 21,
+        department: "CSE",
+        marks: 89,
+        skills: ["Python", "MongoDB", "Java"],
+        address: {
+            city: "Chennai",
+            state: "Tamil Nadu"
+        },
+        scholarship: true
+    },
+
+    {
+        rollNo: 110,
+        name: "Suresh",
+        age: 23,
+        department: "CIVIL",
+        marks: 70,
+        skills: ["AutoCAD", "C", "STAAD"],
+        address: {
+            city: "Vijayawada",
+            state: "Andhra Pradesh"
+        },
+        scholarship: false
+    },
+
+    {
+        rollNo: 111,
+        name: "Meena",
+        age: 22,
+        department: "ECE",
+        marks: 82,
+        skills: ["Python", "Arduino", "IoT"],
+        address: {
+            city: "Bangalore",
+            state: "Karnataka"
+        },
+        scholarship: true
+    },
+
+    {
+        rollNo: 112,
+        name: "Akash",
+        age: 25,
+        department: "CSE",
+        marks: 60,
+        skills: ["C", "Java"],
+        address: {
+            city: "Hyderabad",
+            state: "Telangana"
+        },
+        scholarship: false
+    }
+])
+
+Commands for collection :
+db.students.find()
+
+
+1.db.students.find({
+    marks: { $gt: 80 }
+})
+
+2.db.students.find({
+    department: "CSE"
+})
+
+3.db.students.find({
+    department: "CSE",
+    marks: { $gt: 85 }
+})
+
+4.db.students.find(
+    { marks: { $gt: 80 } },
+    { name: 1, marks: 1, _id: 0 }
+)
+
+5.db.Student.find({
+    marks: { $eq: 85 }
+})
+
+6.db.Student.find({
+    department: { $ne: "CSE" }
+})
+
+7.db.Student.find({
+    marks: { $gt: 85 }
+})
+
+8.db.Student.find({
+    marks: { $gte: 85 }
+})
+
+9.db.Student.find({
+    marks: { $lt: 70 }
+})
+
+10.db.Student.find({
+    department: { $in: ["CSE", "IT"] }
+})
+
+11.db.Student.find({
+    department: { $nin: ["CSE", "IT"] }
+})
+
+12.db.Student.find({
+    $and: [
+        { department: "CSE" },
+        { marks: { $gt: 85 } }
+    ]
+})
+
+13.db.Student.find({
+    department: "CSE",
+    marks: { $gt: 85 }
+})
+
+14.db.Student.find({
+    $or: [
+        { department: "CSE" },
+        { department: "IT" }
+    ]
+})
+
+15.db.Student.find({
+    $nor: [
+        { department: "CSE" },
+        { department: "IT" }
+    ]
+})
+
+16.db.Student.find({
+    marks: {
+        $not: { $gt: 80 }
+    }
+})
+
+
+for (let i = 1; i <= 50; i++) {
+
+    db.products.insertOne({
+        productId: i,
+        productName: "Product " + i ,
+        category:
+            i % 5 === 0 ? "Laptop" :
+            i % 5 === 1 ? "Mobile" :
+            i % 5 === 2 ? "Headphones" :
+            i % 5 === 3 ? "Keyboard" :
+                          "Mouse",
+
+        brand:
+            i % 3 === 0 ? "Dell" :
+            i % 3 === 1 ? "Samsung" :
+                          "HP",
+
+        price: 1000 + (i * 500),
+
+        stock: 10 + i,
+
+        rating: 3 + ((i % 3) * 0.5),
+
+        inStock: i % 4 !== 0,
+
+        tags: [
+            "electronics",
+            i % 2 === 0 ? "featured" : "new"
+        ],
+
+        seller: {
+            sellerId: 1000 + i,
+            sellerName: "Seller " + i
+        },
+
+        createdAt: new Date()
+    });
+}
+
+
+17.db.products.updateOne(
+    { price: 10000 },
+    { $set: { price: 15000 } }
+)
+
+18.db.products.find({
+    productId: 18
+})
+
+19.{
+    productId: 18,
+    productName: "Product 18",
+    price: 15000
+}
+
+20.db.products.updateMany(
+    { price: 10000 },
+    { $set: { price: 15000 } }
+)
+
+21.db.products.updateMany(
+    { brand: "Samsung" },
+    { $inc: { price: 1000 } }
+)
+
+22.db.products.find(
+    { brand: "Samsung" },
+    { productId: 1, productName: 1, brand: 1, price: 1, _id: 0 }
+)
+
+23.
