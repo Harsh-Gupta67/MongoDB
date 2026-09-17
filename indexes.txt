@@ -1,0 +1,550 @@
+use PoornimaStore
+
+db.users.insertMany([
+  {
+    userId: "U001",
+    name: "Harsh Gupta",
+    email: "harsh@gmail.com",
+    age: 19,
+    gender: "Male",
+    skills: ["MongoDB", "Java", "Python"],
+    address: {
+      city: "Jaipur",
+      state: "Rajasthan",
+      pincode: 302017
+    },
+    registeredYear: 2025
+  },
+  {
+    userId: "U002",
+    name: "Gaurav Malviya",
+    email: "gaurav@gmail.com",
+    age: 20,
+    gender: "Male",
+    skills: ["Java", "SQL"],
+    address: {
+      city: "Delhi",
+      state: "Delhi",
+      pincode: 110001
+    },
+    registeredYear: 2024
+  },
+  {
+    userId: "U003",
+    name: "Riya Sharma",
+    email: "riya@gmail.com",
+    age: 21,
+    gender: "Female",
+    skills: ["Python", "Data Science"],
+    address: {
+      city: "Mumbai",
+      state: "Maharashtra",
+      pincode: 400001
+    },
+    registeredYear: 2025
+  },
+  {
+    userId: "U004",
+    name: "Aman Verma",
+    email: "aman@gmail.com",
+    age: 22,
+    gender: "Male",
+    skills: ["C++", "DSA"],
+    address: {
+      city: "Lucknow",
+      state: "Uttar Pradesh",
+      pincode: 226001
+    },
+    registeredYear: 2023
+  },
+  {
+    userId: "U005",
+    name: "Priya Singh",
+    email: "priya@gmail.com",
+    age: 20,
+    gender: "Female",
+    skills: ["JavaScript", "React"],
+    address: {
+      city: "Pune",
+      state: "Maharashtra",
+      pincode: 411001
+    },
+    registeredYear: 2024
+  }
+])
+
+
+db.products.insertMany([
+  {
+    productId: "P001",
+    name: "Samsung Galaxy S24",
+    category: "Mobiles",
+    brand: "Samsung",
+    price: 74999,
+    stock: 25,
+    rating: 4.5,
+    specifications: {
+      ram: "8GB",
+      storage: "256GB",
+      color: "Black"
+    }
+  },
+  {
+    productId: "P002",
+    name: "iPhone 15",
+    category: "Mobiles",
+    brand: "Apple",
+    price: 69999,
+    stock: 18,
+    rating: 4.7,
+    specifications: {
+      ram: "6GB",
+      storage: "128GB",
+      color: "Blue"
+    }
+  },
+  {
+    productId: "P003",
+    name: "HP Pavilion",
+    category: "Laptops",
+    brand: "HP",
+    price: 62999,
+    stock: 12,
+    rating: 4.3,
+    specifications: {
+      ram: "16GB",
+      storage: "512GB SSD",
+      processor: "Intel i5"
+    }
+  },
+  {
+    productId: "P004",
+    name: "Sony Headphones",
+    category: "Electronics",
+    brand: "Sony",
+    price: 8999,
+    stock: 40,
+    rating: 4.4,
+    specifications: {
+      type: "Wireless",
+      battery: "30 Hours"
+    }
+  },
+  {
+    productId: "P005",
+    name: "Nike Running Shoes",
+    category: "Fashion",
+    brand: "Nike",
+    price: 5999,
+    stock: 30,
+    rating: 4.2
+  },
+  {
+    productId: "P006",
+    name: "Logitech Mouse",
+    category: "Electronics",
+    brand: "Logitech",
+    price: 1499,
+    stock: 75,
+    rating: 4.1
+  },
+  {
+    productId: "P007",
+    name: "Samsung Smart TV",
+    category: "Home Appliances",
+    brand: "Samsung",
+    price: 45999,
+    stock: 10,
+    rating: 4.6
+  },
+  {
+    productId: "P008",
+    name: "Apple Watch",
+    category: "Electronics",
+    brand: "Apple",
+    price: 39999,
+    stock: 15,
+    rating: 4.5
+  }
+])
+
+
+db.categories.insertMany([
+  {
+    categoryId: "C001",
+    name: "Mobiles",
+    description: "Smartphones and mobile accessories",
+    productsCount: 2
+  },
+  {
+    categoryId: "C002",
+    name: "Laptops",
+    description: "Laptops and computers",
+    productsCount: 1
+  },
+  {
+    categoryId: "C003",
+    name: "Electronics",
+    description: "Electronic gadgets and accessories",
+    productsCount: 3
+  },
+  {
+    categoryId: "C004",
+    name: "Fashion",
+    description: "Clothing and footwear",
+    productsCount: 1
+  },
+  {
+    categoryId: "C005",
+    name: "Home Appliances",
+    description: "Home electronic appliances",
+    productsCount: 1
+  }
+])
+
+
+db.orders.insertMany([
+  {
+    orderId: "O001",
+    userId: "U001",
+    orderDate: new Date("2026-09-01"),
+    status: "Delivered",
+    totalAmount: 76498
+  },
+  {
+    orderId: "O002",
+    userId: "U002",
+    orderDate: new Date("2026-09-03"),
+    status: "Shipped",
+    totalAmount: 69999
+  },
+  {
+    orderId: "O003",
+    userId: "U003",
+    orderDate: new Date("2026-09-05"),
+    status: "Processing",
+    totalAmount: 8999
+  },
+  {
+    orderId: "O004",
+    userId: "U004",
+    orderDate: new Date("2026-09-07"),
+    status: "Delivered",
+    totalAmount: 5999
+  },
+  {
+    orderId: "O005",
+    userId: "U005",
+    orderDate: new Date("2026-09-10"),
+    status: "Cancelled",
+    totalAmount: 39999
+  }
+])
+
+
+db.orderItems.insertMany([
+  {
+    itemId: "I001",
+    orderId: "O001",
+    productId: "P001",
+    quantity: 1,
+    price: 74999
+  },
+  {
+    itemId: "I002",
+    orderId: "O001",
+    productId: "P006",
+    quantity: 1,
+    price: 1499
+  },
+  {
+    itemId: "I003",
+    orderId: "O002",
+    productId: "P002",
+    quantity: 1,
+    price: 69999
+  },
+  {
+    itemId: "I004",
+    orderId: "O003",
+    productId: "P004",
+    quantity: 1,
+    price: 8999
+  },
+  {
+    itemId: "I005",
+    orderId: "O004",
+    productId: "P005",
+    quantity: 1,
+    price: 5999
+  },
+  {
+    itemId: "I006",
+    orderId: "O005",
+    productId: "P008",
+    quantity: 1,
+    price: 39999
+  }
+])
+
+
+db.payments.insertMany([
+  {
+    paymentId: "PAY001",
+    orderId: "O001",
+    method: "UPI",
+    amount: 76498,
+    status: "Successful"
+  },
+  {
+    paymentId: "PAY002",
+    orderId: "O002",
+    method: "Credit Card",
+    amount: 69999,
+    status: "Successful"
+  },
+  {
+    paymentId: "PAY003",
+    orderId: "O003",
+    method: "UPI",
+    amount: 8999,
+    status: "Successful"
+  },
+  {
+    paymentId: "PAY004",
+    orderId: "O004",
+    method: "Cash on Delivery",
+    amount: 5999,
+    status: "Successful"
+  },
+  {
+    paymentId: "PAY005",
+    orderId: "O005",
+    method: "Debit Card",
+    amount: 39999,
+    status: "Refunded"
+  }
+])
+
+db.reviews.insertMany([
+  {
+    reviewId: "R001",
+    userId: "U001",
+    productId: "P001",
+    rating: 5,
+    comment: "Excellent smartphone",
+    reviewDate: new Date("2026-09-05")
+  },
+  {
+    reviewId: "R002",
+    userId: "U002",
+    productId: "P002",
+    rating: 4,
+    comment: "Good phone and camera",
+    reviewDate: new Date("2026-09-07")
+  },
+  {
+    reviewId: "R003",
+    userId: "U003",
+    productId: "P004",
+    rating: 5,
+    comment: "Amazing sound quality",
+    reviewDate: new Date("2026-09-09")
+  },
+  {
+    reviewId: "R004",
+    userId: "U004",
+    productId: "P005",
+    rating: 4,
+    comment: "Comfortable shoes",
+    reviewDate: new Date("2026-09-11")
+  }
+])
+
+db.cart.insertMany([
+  {
+    cartId: "CART001",
+    userId: "U001",
+    items: [
+      {
+        productId: "P003",
+        quantity: 1
+      },
+      {
+        productId: "P004",
+        quantity: 2
+      }
+    ],
+    totalItems: 3
+  },
+  {
+    cartId: "CART002",
+    userId: "U002",
+    items: [
+      {
+        productId: "P005",
+        quantity: 1
+      }
+    ],
+    totalItems: 1
+  },
+  {
+    cartId: "CART003",
+    userId: "U003",
+    items: [
+      {
+        productId: "P008",
+        quantity: 1
+      }
+    ],
+    totalItems: 1
+  }
+])
+
+
+
+db.addresses.insertMany([
+  {
+    addressId: "A001",
+    userId: "U001",
+    type: "Home",
+    address: {
+      houseNo: "45",
+      street: "Mansarovar",
+      city: "Jaipur",
+      state: "Rajasthan",
+      pincode: 302020
+    }
+  },
+  {
+    addressId: "A002",
+    userId: "U002",
+    type: "Home",
+    address: {
+      houseNo: "12",
+      street: "Rohini",
+      city: "Delhi",
+      state: "Delhi",
+      pincode: 110085
+    }
+  },
+  {
+    addressId: "A003",
+    userId: "U003",
+    type: "Work",
+    address: {
+      houseNo: "88",
+      street: "Andheri",
+      city: "Mumbai",
+      state: "Maharashtra",
+      pincode: 400053
+    }
+  },
+  {
+    addressId: "A004",
+    userId: "U004",
+    type: "Home",
+    address: {
+      houseNo: "21",
+      street: "Gomti Nagar",
+      city: "Lucknow",
+      state: "Uttar Pradesh",
+      pincode: 226010
+    }
+  }
+])
+
+
+
+db.employees.insertMany([
+  {
+    employeeId: "E001",
+    name: "Rahul Sharma",
+    department: "IT",
+    position: "Software Engineer",
+    salary: 65000,
+    skills: ["Java", "MongoDB", "Node.js"]
+  },
+  {
+    employeeId: "E002",
+    name: "Neha Verma",
+    department: "HR",
+    position: "HR Manager",
+    salary: 55000,
+    skills: ["Recruitment", "Management"]
+  },
+  {
+    employeeId: "E003",
+    name: "Amit Singh",
+    department: "Sales",
+    position: "Sales Executive",
+    salary: 45000,
+    skills: ["Sales", "Communication"]
+  },
+  {
+    employeeId: "E004",
+    name: "Sneha Gupta",
+    department: "IT",
+    position: "QA Engineer",
+    salary: 60000,
+    skills: ["Manual Testing", "Selenium", "Postman"]
+  },
+  {
+    employeeId: "E005",
+    name: "Vikas Jain",
+    department: "Finance",
+    position: "Accountant",
+    salary: 50000,
+    skills: ["Excel", "Accounting"]
+  }
+])
+
+Queries:
+
+1.db.users.createIndex({
+  "address.city": 1
+})
+2.db.users.createIndex({
+  skills: 1
+})
+
+3.db.users.createIndex({
+  "address.city": 1
+})
+
+4.db.users.getIndexes()
+
+5.db.users.find({
+  email: "harsh@gmail.com"
+}).explain("executionStats")
+
+6.db.products.createIndex({
+  productId: 1
+})
+
+7.db.products.createIndex({
+  brand: 1
+})
+
+8.db.products.find({
+  category: "Mobiles",
+  price: { $lt: 80000 }
+})
+
+9.db.products.createIndex({
+  rating: -1
+})
+
+10.db.products.createIndex({
+  "specifications.ram": 1
+})
+
+11.db.products.find({
+  $text: {
+    $search: "Samsung"
+  }
+})
+
+12.db.products.getIndexes()
+
+
